@@ -17,7 +17,7 @@ angular.module('starter', ['ionic', 'ngRoute', 'ngAnimate', 'starter.services', 
   // updates a navigation bar
   $routeProvider.when('/home', {
     templateUrl: 'templates/app.html',
-    controller: 'AppCtrl'
+    controller: 'PetsTabCtrl'
   });
 
   // if the url matches something like /pet/2 then this route

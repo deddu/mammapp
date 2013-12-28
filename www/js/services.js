@@ -8,10 +8,12 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var pets = [
-    { id: 0, title: 'Home', description: 'Have you cleaned the dishes?' },
-    { id: 1, title: 'Style', description: 'Trim your beard!' },
-    { id: 2, title: 'Pets', description: 'Clean the cat litter!' },
-    { id: 3, title: 'Life', description: 'Wear a pullover, is chilly today!' }
+    { id: 0, title: 'Clean Dishes', description: 'Have you cleaned the dishes?', active:true ,frequency:"daily" },
+    { id: 1, title: 'Trim Beard', description: 'Trim your beard!' , active:true ,frequency:"weekly"},
+    { id: 2, title: 'Cat Litter', description: 'Clean the cat litter!' , active:false ,frequency:"weekly"},
+    { id: 3, title: 'Walk Dog', description: 'and wear a pullover, is chilly today!' , active:true ,frequency:"never"},
+    { id: 4, title: 'Shave', description: 'You are not a grizzly!!' , active:true ,frequency:"never"},
+      { id: 5, title: 'Change Linens', description: 'Change your linens!' , active:true ,frequency:"never"}
   ];
 
   return {

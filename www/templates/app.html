@@ -1,77 +1,41 @@
 <nav-page id="app-page">
 
 
-  <!--
-  Create tabs with an icon and text label, using the tabs-positive style (blue by default),
-  and disabling header title animation when switching tabs.
-  -->
-  <tabs tabs-style="tabs-icon-top" tabs-type="tabs-assertive" animate-nav="false">
+    <side-menus>
+        <!-- Center content -->
+        <pane side-menu-content>
+            <header class="bar bar-header bar-assertive">
+                <h1 class="title">Todo</h1>
+            </header>
 
-    <!-- Pets tab -->
-    <tab title="Tasks" icon="icon ion-home" ng-controller="PetsTabCtrl">
-      <content has-header="true" has-tabs="true">
+            <content has-header="true">
+                <ul class="list">
+                    <li ng-repeat="task in selectedtasks|filter:task.active=true" class="item"> {{task.title}}
+                    </li>
+                </ul>
+            </content>
+        </pane>
 
-         <div class="list card">
-          <a ng-repeat="pet in pets" type="item-text-wrap" href="#/pet/{{pet.id}}" class="item">
-              <h3>{{pet.title}}</h3>
-              <p>{{pet.description}}</p>
-            </a>
-          </item>
-         </div>
-      </content>
-    </tab>
 
-    <!-- Adoption tab -->
-    <tab title="Adopt" icon="icon ion-heart">
-      <content has-header="true" has-tabs="true">
-        <div class="padding">
-          <h2>Adopt a pet today.</h2>
-        </div>
-        <div class="list list-inset">
-          <label class="item item-input">
-            <span class="input-label">Your name</span>
-            <input type="text">
-          </label>
-          <label class="item item-input">
-            <span class="input-label">Your email</span>
-            <input type="password">
-          </label>
-          <label class="item item-input">
-            <textarea placeholder="Any more info?"></textarea>
-          </label>
-          <button class="button button-positive button-block">Adopt</button>
-        </div>
-      </content>
-    </tab>
-
-    <!-- Home tab -->
-    <tab title="About" icon="icon ion-search">
-      <content has-header="true" has-tabs="true" padding="true">
-          <div class="list card">
-
-              <a href="#" class="item item-icon-left">
-                  <i class="icon ion-home"></i>
-                  Enter home address
-              </a>
-
-              <a href="#" class="item item-icon-left">
-                  <i class="icon ion-ios7-telephone"></i>
-                  Enter phone number
-              </a>
-
-              <a href="#" class="item item-icon-left">
-                  <i class="icon ion-wifi"></i>
-                  Enter wireless password
-              </a>
-
-              <a href="#" class="item item-icon-left">
-                  <i class="icon ion-card"></i>
-                  Enter card information
-              </a>
-
-          </div>
-      </content>
-    </tab>
-
-  </tabs>
+        <!-- Right menu -->
+        <side-menu side="right">
+            <content has-header="true">
+            <ul class="list">
+                <li ng-repeat="task in alltasks" class="item item-checkbox item-button-right"> {{task.title}}
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="task.active">
+                    </label>
+                    <a href="#" >
+                        {{task.frequency}}
+                    </a>
+                </li>
+            </ul>
+            </content>
+            <footer class="bar bar-footer bar-assertive">
+                <h1 class="title">
+                    <i class="icon ion-plus"></i>
+                </h1>
+            </footer>
+        </side-menu>
+    </side-menus>
 </nav-page>

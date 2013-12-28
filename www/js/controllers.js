@@ -8,7 +8,8 @@ angular.module('starter.controllers', [])
 // A simple controller that fetches a list of data
 .controller('PetsTabCtrl', function($scope, Pets) {
   // "Pets" is a service returning mock data (services.js)
-  $scope.pets = Pets.all();
+  $scope.alltasks = Pets.all();
+  $scope.selectedtasks = Pets.all();
 
   $scope.$on('tab.shown', function() {
     // Might do a load here
