@@ -1,0 +1,11 @@
+{
+  "name": "mammapp",
+  "version": "0.0.0",
+  "description": "pearls of mom's wisdom",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "andrea cadeddu",
+  "license": "MIT"
+}
