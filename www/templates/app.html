@@ -27,7 +27,7 @@
             <ul class="list">
                 <li ng-repeat="task in alltasks" class="item item-checkbox">
                     <label class="checkbox">
-                        <checkbox type="checkbox" ng-model="task.active"> {{task.title}}</checkbox>
+                        <checkbox ng-model="task.active"> {{task.title}}</checkbox>
                     </label>
                     <span ng-click="show(task)" class="badge">    {{task.frequency}}     </span>
                 </li>

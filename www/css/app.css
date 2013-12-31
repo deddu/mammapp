@@ -10,3 +10,6 @@
   left: 50%;
   margin: -64px 0px 0px -64px;
 }
+label .item-checkbox {
+    border: none;
+}
