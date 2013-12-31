@@ -9,17 +9,24 @@ angular.module('starter.controllers', [])
 .controller('PetsTabCtrl', function($scope, ActionSheet, Pets) {
 
 
-  $scope.alltasks = [
-            { id: 0, title: 'Clean Dishes', description: 'Have you cleaned the dishes?', active:true ,frequency:"Daily" },
-            { id: 1, title: 'Trim Beard', description: 'Trim your beard!' , active:true ,frequency:"Weekly"},
-            { id: 2, title: 'Cat Litter', description: 'Clean the cat litter!' , active:false ,frequency:"Weekly"},
-            { id: 3, title: 'Walk Dog', description: 'and wear a pullover, is chilly today!' , active:true ,frequency:"Never"},
-            { id: 4, title: 'Shave', description: 'You are not a grizzly!!' , active:true ,frequency:"Never"},
-            { id: 5, title: 'Change Linens', description: 'Change your linens!' , active:true ,frequency:"Never"}
-        ];
+//  $scope.alltasks = [
+//            { id: 0, title: 'Clean Dishes', description: 'Have you cleaned the dishes?', active:true ,frequency:"Daily" },
+//            { id: 1, title: 'Trim Beard', description: 'Trim your beard!' , active:true ,frequency:"Weekly"},
+//            { id: 2, title: 'Cat Litter', description: 'Clean the cat litter!' , active:false ,frequency:"Weekly"},
+//            { id: 3, title: 'Walk Dog', description: 'and wear a pullover, is chilly today!' , active:true ,frequency:"Never"},
+//            { id: 4, title: 'Shave', description: 'You are not a grizzly!!' , active:true ,frequency:"Never"},
+//            { id: 5, title: 'Change Linens', description: 'Change your linens!' , active:true ,frequency:"Never"}
+//        ];
   // "Pets" is a service returning mock data (services.js)
-  //$scope.alltasks = Pets.all();
-  //$scope.selectedtasks = $scope.alltasks.filter(function(x){return x.active});
+  $scope.alltasks = Pets.all();
+//  $scope.selectedtasks = $scope.alltasks.filter(function(x){return x.active});
+  $scope.checkboxclicked = function(sel){
+      $scope.$apply()
+//      $scope.alltasks[sel.id] = sel
+//      $scope.alltasks.map(function(x){console.log(x.title + " is " + x.active)});
+      //      $scope.alltasks[el.id].active=el.active
+       //      $scope.alltasks.map(function(x){console.log(x.title + " is " + x.active)});
+  }
 
 
 
@@ -55,7 +62,7 @@ angular.module('starter.controllers', [])
             // the index of the button that was clicked. Return
             // "true" to tell the action sheet to close. Return false to not close.
             buttonClicked: function(index) {
-                el.frequency=buttons[index].text 
+                el.frequency=buttons[index].text
                 return true;
             },
 
