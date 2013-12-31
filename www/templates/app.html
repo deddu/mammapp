@@ -10,20 +10,10 @@
 
             <content has-header="true">
                 <ul class="list">
-                    <li ng-repeat="task in alltasks" class="item item-checkbox">
-                        {{task.title}}
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model="task.active">
-                        </label>
-                        <span class="badge"> {{task.frequency}}</span>
-                    </li>
-                </ul>
-                <ul class="list">
-                    <li ng-repeat="task in alltasks|filter:task.active=true" class="item item-checkbox">
-                        {{task.title}}
-                        <label class="checkbox">
-                            <input type="checkbox" ng-model="task.active">
-                        </label>
+                    <li ng-repeat="task in alltasks|filter:task.active=true" class="item ">
+
+                            {{task.title}}
+
                         <span class="badge"> {{task.frequency}}</span>
                     </li>
                 </ul>
@@ -35,9 +25,9 @@
         <side-menu side="right">
             <content has-header="true">
             <ul class="list">
-                <li ng-repeat="task in alltasks" class="item item-checkbox"> {{task.title}}
+                <li ng-repeat="task in alltasks" class="item item-checkbox">
                     <label class="checkbox">
-                        <input type="checkbox" ng-model="task.active">
+                        <checkbox type="checkbox" ng-model="task.active"> {{task.title}}</checkbox>
                     </label>
                     <span ng-click="show(task)" class="badge">    {{task.frequency}}     </span>
                 </li>
